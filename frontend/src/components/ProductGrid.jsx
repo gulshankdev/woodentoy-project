@@ -9,6 +9,9 @@ function ProductGrid({
   search,
 
   selectedCategory,
+    selectedAge,
+     maxPrice,
+      sortOption,
 
 }) {
 
@@ -31,18 +34,52 @@ function ProductGrid({
         ? true
 
         : product.category === selectedCategory;
+        const matchesAge =
 
-    return matchesSearch && matchesCategory;
+  selectedAge === "All"
+
+    ? true
+
+    : product.age === selectedAge;
+    const matchesPrice =
+  product.price <= maxPrice;
+
+    return matchesSearch && matchesCategory && matchesAge && matchesPrice;
 
   });
+   const sortedProducts = [...filteredProducts];
+
+  switch (sortOption) {
+
+    case "low":
+      sortedProducts.sort((a, b) => a.price - b.price);
+      break;
+
+    case "high":
+      sortedProducts.sort((a, b) => b.price - a.price);
+      break;
+
+    case "rating":
+      sortedProducts.sort((a, b) => b.rating - a.rating);
+      break;
+
+    case "name":
+      sortedProducts.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      break;
+
+    default:
+      break;
+  }
 
   return (
 
     <div className="product-grid">
 
-      {filteredProducts.length > 0 ? (
+      {sortedProducts.length > 0 ? (
 
-        filteredProducts.map((product) => (
+      sortedProducts.map((product) => (
 
           <ProductCard
 

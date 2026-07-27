@@ -13,6 +13,8 @@ function Shop() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
 const [selectedAge, setSelectedAge] = useState("All");
+const [maxPrice, setMaxPrice] = useState(30000);
+const [sortOption, setSortOption] = useState("default");
 
   return (
 
@@ -28,10 +30,14 @@ const [selectedAge, setSelectedAge] = useState("All");
 
       <div className="shop-container">
 
-        <FilterSidebar
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
+      <FilterSidebar
+  selectedCategory={selectedCategory}
+  setSelectedCategory={setSelectedCategory}
+  selectedAge={selectedAge}
+  setSelectedAge={setSelectedAge}
+   maxPrice={maxPrice}
+  setMaxPrice={setMaxPrice}
+/>
 
         <div className="shop-content">
 
@@ -40,12 +46,19 @@ const [selectedAge, setSelectedAge] = useState("All");
             setSearch={setSearch}
           />
 
-          <SortBar />
+          <SortBar
+  sortOption={sortOption}
+  setSortOption={setSortOption}
+  totalProducts={15}
+/>
 
           <ProductGrid
-            search={search}
-            selectedCategory={selectedCategory}
-          />
+  search={search}
+  selectedCategory={selectedCategory}
+  selectedAge={selectedAge}
+    maxPrice={maxPrice}
+    sortOption={sortOption}
+/>
 
         </div>
 

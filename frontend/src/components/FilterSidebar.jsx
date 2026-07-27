@@ -3,8 +3,11 @@ import "./FilterSidebar.css";
 function FilterSidebar({
   selectedCategory,
   setSelectedCategory,
+  selectedAge,
+  setSelectedAge,
+   maxPrice,
+  setMaxPrice,
 }) {
-
   const categories = [
     "All",
     "Montessori",
@@ -13,6 +16,13 @@ function FilterSidebar({
     "Furniture",
   ];
 
+  const ages = [
+  "All",
+  "12-36 Months",
+  "18-48 Months",
+  "18-60 Months",
+  "24-60 Months",
+];
   return (
 
     <aside className="filter-sidebar">
@@ -48,52 +58,53 @@ function FilterSidebar({
 
       {/* Age */}
 
-      <div className="filter-box">
+     <div className="filter-box">
 
-        <h3>Age</h3>
+  <h3>Age</h3>
 
-        <label>
+  {ages.map((age) => (
 
-          <input type="checkbox" />
+    <label key={age}>
 
-          0–12 Months
+      <input
+        type="radio"
+        name="age"
+        checked={selectedAge === age}
+        onChange={() => setSelectedAge(age)}
+      />
 
-        </label>
+      {age}
 
-        <label>
+    </label>
 
-          <input type="checkbox" />
+  ))}
 
-          12–24 Months
-
-        </label>
-
-        <label>
-
-          <input type="checkbox" />
-
-          24–60 Months
-
-        </label>
-
-      </div>
+</div>
 
       {/* Price */}
 
-      <div className="filter-box">
+     <div className="filter-box">
 
-        <h3>Price</h3>
+  <h3>Maximum Price</h3>
 
-        <input
-          type="range"
-          min="1000"
-          max="30000"
-        />
+  <input
+    type="range"
+    min="1000"
+    max="30000"
+    step="500"
+    value={maxPrice}
+    onChange={(e) =>
+      setMaxPrice(Number(e.target.value))
+    }
+  />
 
-        <p>₹1,000 – ₹30,000</p>
+  <p>
 
-      </div>
+    ₹1,000 – ₹{maxPrice.toLocaleString()}
 
+  </p>
+
+</div>
     </aside>
 
   );
