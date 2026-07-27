@@ -1,0 +1,20 @@
+.product-title{
+  text-decoration:none;
+  color:inherit;
+}
+
+.product-title:hover{
+  color:#2f6b43;
+}
+
+.product-image img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  display:block;
+  transition:.4s;
+}
+
+.product-card:hover .product-image img{
+  transform:scale(1.05);
+}

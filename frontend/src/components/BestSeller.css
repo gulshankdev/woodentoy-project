@@ -105,3 +105,19 @@
     cursor:pointer;
 
 }
+
+@media(max-width:992px){
+
+.best-seller{
+
+grid-template-columns:1fr;
+
+}
+
+.best-left img{
+
+height:450px;
+
+}
+
+}

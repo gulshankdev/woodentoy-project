@@ -1,57 +1,38 @@
-// import "./ShopByAge.css";
+import "./ShopByAge.css";
+import ageData from "../data/ageData";
 
-// const ageGroups = [
-//   {
-//     id: 1,
-//     title: "0 – 2 Years",
-//     image: "/images/age/0-2.jpg",
-//   },
-//   {
-//     id: 2,
-//     title: "2 – 4 Years",
-//     image: "/images/age/2-4.jpg",
-//   },
-//   {
-//     id: 3,
-//     title: "4 – 6 Years",
-//     image: "/images/age/4-6.jpg",
-//   },
-//   {
-//     id: 4,
-//     title: "6+ Years",
-//     image: "/images/age/6plus.jpg",
-//   },
-// ];
+function ShopByAge() {
+  return (
+    <section className="shopAge">
 
-// function ShopByAge() {
-//   return (
-//     <section className="shop-age">
+      <div className="ageHeading">
 
-//       <div className="section-heading">
-//         <span>SHOP BY AGE</span>
-//         <h2>Find The Perfect Toy</h2>
-//       </div>
+        <p>SHOP BY AGE</p>
 
-//       <div className="age-grid">
+        <h2>
+          Choose Toys According To Your Child's Age
+        </h2>
 
-//         {ageGroups.map((item) => (
+      </div>
 
-//           <div className="age-card" key={item.id}>
+      <div className="ageGrid">
 
-//             <img src={item.image} alt={item.title} />
+        {ageData.map((item) => (
 
-//             <div className="age-overlay">
-//               <h3>{item.title}</h3>
-//             </div>
+          <div className="ageCard" key={item.id}>
 
-//           </div>
+            <img src={item.image} alt={item.title} />
 
-//         ))}
+            <h3>{item.title}</h3>
 
-//       </div>
+          </div>
 
-//     </section>
-//   );
-// }
+        ))}
 
-// export default ShopByAge;
+      </div>
+
+    </section>
+  );
+}
+
+export default ShopByAge;
