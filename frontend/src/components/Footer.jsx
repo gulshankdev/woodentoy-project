@@ -69,9 +69,9 @@ function Footer() {
 
           <p>📍 Unit No. 516, Vipul Business Park, Sector 48, Gurugram, Haryana, India 122018</p>
 
-          <p>📞 +91 8796809993</p>
+          <p>📞 +91  7310081002</p>
 
-          <p>✉tumblewood.global@gmail.com </p>
+          <p>✉contact@tumblewood.in </p>
 
           <div className="social">
 
