@@ -1,0 +1,62 @@
+.collections-page{
+  background:#faf8f5;
+  min-height:100vh;
+}
+
+/* Hero */
+
+.collections-hero{
+  height:420px;
+  display:flex;
+  align-items:center;
+  padding:0 8%;
+  background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+             url("/images/categories/montessori.jpg") center/cover no-repeat;
+}
+
+.hero-content{
+  max-width:650px;
+}
+
+.hero-content h1{
+  font-size:64px;
+  color:#fff;
+  margin-bottom:20px;
+}
+
+.hero-content p{
+  color:#fff;
+  font-size:20px;
+  line-height:1.8;
+}
+
+/* Cards */
+
+.collections-container{
+  padding:80px 6%;
+}
+
+.collections-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:35px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+  .collections-hero{
+    height:320px;
+    padding:0 6%;
+  }
+
+  .hero-content h1{
+    font-size:42px;
+  }
+
+  .hero-content p{
+    font-size:16px;
+  }
+
+}

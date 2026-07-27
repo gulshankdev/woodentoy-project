@@ -1,36 +1,48 @@
 import "./FilterSidebar.css";
 
-function FilterSidebar() {
+function FilterSidebar({
+  selectedCategory,
+  setSelectedCategory,
+}) {
+
+  const categories = [
+    "All",
+    "Montessori",
+    "Ride On Toys",
+    "Balance Toys",
+    "Furniture",
+  ];
+
   return (
+
     <aside className="filter-sidebar">
 
       <h2>Filters</h2>
 
-      {/* Categories */}
+      {/* Category */}
 
       <div className="filter-box">
 
         <h3>Categories</h3>
 
-        <label>
-          <input type="checkbox" />
-          Montessori
-        </label>
+        {categories.map((category) => (
 
-        <label>
-          <input type="checkbox" />
-          Ride On Toys
-        </label>
+          <label key={category}>
 
-        <label>
-          <input type="checkbox" />
-          Balance Toys
-        </label>
+            <input
+              type="radio"
+              name="category"
+              checked={selectedCategory === category}
+              onChange={() =>
+                setSelectedCategory(category)
+              }
+            />
 
-        <label>
-          <input type="checkbox" />
-          Furniture
-        </label>
+            {category}
+
+          </label>
+
+        ))}
 
       </div>
 
@@ -41,18 +53,27 @@ function FilterSidebar() {
         <h3>Age</h3>
 
         <label>
+
           <input type="checkbox" />
+
           0–12 Months
+
         </label>
 
         <label>
+
           <input type="checkbox" />
+
           12–24 Months
+
         </label>
 
         <label>
+
           <input type="checkbox" />
+
           24–60 Months
+
         </label>
 
       </div>
@@ -74,7 +95,9 @@ function FilterSidebar() {
       </div>
 
     </aside>
+
   );
+
 }
 
 export default FilterSidebar;

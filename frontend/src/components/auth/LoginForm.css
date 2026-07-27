@@ -1,0 +1,144 @@
+.login-container{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+min-height:100vh;
+
+background:#faf8f5;
+
+}
+
+.login-left img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.login-right{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+padding:80px;
+
+}
+
+.login-right h1{
+
+font-size:42px;
+
+margin-bottom:10px;
+
+}
+
+.login-right p{
+
+color:#777;
+
+margin-bottom:30px;
+
+}
+
+.login-right form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.login-right input{
+
+padding:16px;
+
+font-size:16px;
+
+border:1px solid #ddd;
+
+border-radius:8px;
+
+outline:none;
+
+}
+
+.login-right input:focus{
+
+border-color:#b38b59;
+
+}
+
+.login-right button{
+
+padding:16px;
+
+background:#b38b59;
+
+color:white;
+
+border:none;
+
+border-radius:8px;
+
+font-size:17px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.login-right button:hover{
+
+background:#8b673d;
+
+}
+
+.login-right span{
+
+color:#b38b59;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+.register-link{
+
+margin-top:25px;
+
+font-size:16px;
+
+color:#666;
+
+}
+
+.register-link a{
+
+margin-left:8px;
+
+text-decoration:none;
+
+color:#b38b59;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.register-link a:hover{
+
+color:#8b673d;
+
+}

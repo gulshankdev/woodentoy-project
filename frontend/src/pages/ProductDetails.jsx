@@ -3,16 +3,18 @@ import { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
 
-import products from "../data/products";
+import { getProductBySlug } from "../services/productService";
+import { useCart } from "../context/CartContext";
 
 function ProductDetails() {
 
-  const { slug } = useParams();
+ const { slug } = useParams();
 
-  const product = products.find(
-    (item) => item.slug === slug
-  );
-  const [quantity, setQuantity] = useState(1);
+const { addToCart } = useCart();
+
+const product = getProductBySlug(slug);
+
+const [quantity, setQuantity] = useState(1);
 
 const increaseQuantity = () => {
   setQuantity(quantity + 1);
@@ -147,9 +149,12 @@ useEffect(() => {
 
   </div>
 
-  <button className="cart-btn">
-    Add To Cart
-  </button>
+<button
+  className="cart-btn"
+  onClick={() => addToCart(product, quantity)}
+>
+  Add To Cart
+</button>
 
 </div>
 

@@ -18,3 +18,42 @@
 .product-card:hover .product-image img{
   transform:scale(1.05);
 }
+.product-image{
+  position:relative;
+}
+
+.wishlist-btn{
+
+position:absolute;
+
+top:15px;
+
+right:15px;
+
+width:45px;
+
+height:45px;
+
+border:none;
+
+border-radius:50%;
+
+background:white;
+
+font-size:22px;
+
+cursor:pointer;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+transition:.3s;
+
+z-index:2;
+
+}
+
+.wishlist-btn:hover{
+
+transform:scale(1.1);
+
+}

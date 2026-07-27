@@ -1,5 +1,7 @@
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
+import { useWishlist } from "../context/WishlistContext";
+import { useCart } from "../context/CartContext";
 console.log("THIS IS MY PRODUCT CARD");
 
 function ProductCard({ product }) {
@@ -7,11 +9,24 @@ function ProductCard({ product }) {
    console.log(product);
   console.log(product.images);
   console.log(product.images?.[0]);
+  const {
+  toggleWishlist,
+  isWishlisted
+} = useWishlist();
+const { addToCart } = useCart();
 
   return (
     <div className="product-card">
 
       <div className="product-image">
+         <button
+    className="wishlist-btn"
+    onClick={() => toggleWishlist(product)}
+  >
+    {isWishlisted(product.id)
+      ? "❤️"
+      : "🤍"}
+  </button>
 
         <Link to={`/product/${product.slug}`}>
 
@@ -56,9 +71,12 @@ function ProductCard({ product }) {
 
         </div>
 
-        <button className="cart-btn">
-          Add to Cart
-        </button>
+   <button
+  className="cart-btn"
+  onClick={() => addToCart(product)}
+>
+  Add to Cart
+</button>
 
       </div>
 

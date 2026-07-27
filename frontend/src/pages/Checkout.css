@@ -1,0 +1,71 @@
+.checkout-page{
+  padding:120px 6%;
+  background:#faf8f5;
+  min-height:100vh;
+}
+
+.checkout-page h1{
+  margin-bottom:40px;
+}
+
+.checkout-container{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:40px;
+}
+
+.billing-details,
+.order-summary{
+  background:#fff;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.billing-details{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.billing-details input,
+.billing-details textarea{
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  font-size:16px;
+}
+
+.summary-item{
+  display:flex;
+  justify-content:space-between;
+  margin:18px 0;
+}
+
+.total{
+  font-size:22px;
+}
+
+.place-order-btn{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:10px;
+  background:#2f6b43;
+  color:#fff;
+  font-size:18px;
+  cursor:pointer;
+  margin-top:25px;
+}
+
+.place-order-btn:hover{
+  background:#234f32;
+}
+
+@media(max-width:992px){
+
+.checkout-container{
+  grid-template-columns:1fr;
+}
+
+}
