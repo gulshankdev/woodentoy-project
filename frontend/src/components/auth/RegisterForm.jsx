@@ -1,83 +1,119 @@
+import {useState} from "react";
+import {useNavigate,Link} from "react-router-dom";
 import "./LoginForm.css";
-import { Link } from "react-router-dom";
 
-function RegisterForm() {
+function RegisterForm(){
 
-  return (
+const navigate=useNavigate();
 
-    <div className="login-container">
+const [user,setUser]=useState({
 
-      <div className="login-left">
+first_name:"",
+email:"",
+phone:"",
+password:"",
+confirmPassword:""
 
-        <img
-          src="/images/auth/login-banner.jpg"
-          alt="Wooden Toys"
-        />
+});
 
-      </div>
+const handleChange=(e)=>{
 
-      <div className="login-right">
+setUser({...user,[e.target.name]:e.target.value});
 
-        <h1>Create Account</h1>
+}
 
-        <p>
+const register=async(e)=>{
 
-          Join TumbleWood and start shopping.
+e.preventDefault();
 
-        </p>
+if(user.password!==user.confirmPassword){
 
-        <form>
+alert("Passwords do not match");
 
-          <input
-            type="text"
-            placeholder="Full Name"
-          />
+return;
 
-          <input
-            type="email"
-            placeholder="Email Address"
-          />
+}
 
-          <input
-            type="tel"
-            placeholder="Phone Number"
-          />
+const res=await fetch("http://127.0.0.1:8000/api/accounts/register/",{
 
-          <input
-            type="password"
-            placeholder="Password"
-          />
+method:"POST",
 
-          <input
-            type="password"
-            placeholder="Confirm Password"
-          />
+headers:{
+"Content-Type":"application/json"
+},
 
-          <button>
+body:JSON.stringify({
 
-            Create Account
+first_name:user.first_name,
+email:user.email,
+phone:user.phone,
+password:user.password
 
-          </button>
+})
 
-        </form>
+});
 
-        <p className="register-link">
+if(res.ok){
 
-          Already have an account?
+alert("Registration Successful");
 
-          <Link to="/login">
+navigate("/login");
 
-            Login
+}else{
 
-          </Link>
+const err=await res.json();
 
-        </p>
+alert(JSON.stringify(err));
 
-      </div>
+}
 
-    </div>
+}
 
-  );
+return(
+
+<form onSubmit={register}>
+
+<input
+name="first_name"
+placeholder="Name"
+onChange={handleChange}
+/>
+
+<input
+name="email"
+placeholder="Email"
+onChange={handleChange}
+/>
+
+<input
+name="phone"
+placeholder="Phone"
+onChange={handleChange}
+/>
+
+<input
+name="password"
+type="password"
+placeholder="Password"
+onChange={handleChange}
+/>
+
+<input
+name="confirmPassword"
+type="password"
+placeholder="Confirm Password"
+onChange={handleChange}
+/>
+
+<button type="submit">
+
+Create Account
+
+</button>
+
+</form>
+
+)
 
 }
 

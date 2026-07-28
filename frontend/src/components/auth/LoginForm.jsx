@@ -1,66 +1,118 @@
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "./LoginForm.css";
-import { Link } from "react-router-dom";
 
 function LoginForm() {
 
-  return (
+  const navigate = useNavigate();
 
-    <div className="login-container">
+  const [email,setEmail]=useState("");
+  const [password,setPassword]=useState("");
 
-      <div className="login-left">
+  const loginUser=async(e)=>{
 
-        <img
-          src="/images/auth/login-banner.jpg"
-          alt="Wooden Toys"
-        />
+    e.preventDefault();
 
-      </div>
+    const res=await fetch("http://127.0.0.1:8000/api/accounts/login/",{
 
-      <div className="login-right">
+      method:"POST",
 
-        <h1>Welcome Back</h1>
+      headers:{
+        "Content-Type":"application/json"
+      },
 
-        <p>
-          Login to continue shopping.
-        </p>
+      body:JSON.stringify({
+        email,
+        password
+      })
 
-        <form>
+    });
 
-          <input
-            type="email"
-            placeholder="Email Address"
-          />
+    const data=await res.json();
 
-          <input
-            type="password"
-            placeholder="Password"
-          />
+    if(res.ok){
 
-          <button>
+      localStorage.setItem("access",data.access);
+      localStorage.setItem("refresh",data.refresh);
+      localStorage.setItem("user",JSON.stringify(data.user));
 
-            Login
+      navigate("/");
 
-          </button>
+    }else{
 
-        </form>
+      alert(data.message);
 
-        <p>
+    }
 
-          Don't have an account?
+  }
 
-         <Link to="/register">
+  return(
 
-    Register
+<div className="login-container">
 
-  </Link>
+<div className="login-left">
 
-        </p>
+<img src="/images/auth/login-banner.jpg" alt="" />
 
-      </div>
+</div>
 
-    </div>
+<div className="login-right">
 
-  );
+<h1>Welcome Back</h1>
+
+<p>Login to continue shopping.</p>
+
+<form onSubmit={loginUser}>
+
+<input
+
+type="email"
+
+placeholder="Email"
+
+value={email}
+
+onChange={(e)=>setEmail(e.target.value)}
+
+/>
+
+<input
+
+type="password"
+
+placeholder="Password"
+
+value={password}
+
+onChange={(e)=>setPassword(e.target.value)}
+
+/>
+
+<button type="submit">
+
+Login
+
+</button>
+
+</form>
+
+<p>
+
+Don't have an account?
+
+<Link to="/register">
+
+Register
+
+</Link>
+
+</p>
+
+</div>
+
+</div>
+
+)
 
 }
 
