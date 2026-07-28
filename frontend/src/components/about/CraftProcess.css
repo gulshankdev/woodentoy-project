@@ -1,0 +1,138 @@
+.craft{
+
+    background:#faf8f5;
+
+    padding:100px 0;
+}
+
+.craft-heading{
+
+    text-align:center;
+
+    margin-bottom:70px;
+}
+
+.craft-heading p{
+
+    color:#b58b4c;
+
+    letter-spacing:4px;
+
+    font-size:15px;
+
+    font-weight:600;
+}
+
+.craft-heading h2{
+
+    margin-top:20px;
+
+    font-size:48px;
+
+    color:#222;
+}
+
+.craft-grid{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+}
+
+.craft-card{
+
+    position:relative;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:45px 30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+}
+
+.craft-card:hover{
+
+    transform:translateY(-8px);
+}
+
+.craft-number{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    background:#b58b4c;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:700;
+}
+
+.craft-icon{
+
+    width:80px;
+
+    height:80px;
+
+    margin:auto;
+
+    background:#b58b4c;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    margin-bottom:25px;
+}
+
+.craft-card h3{
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+    color:#222;
+}
+
+.craft-card p{
+
+    color:#666;
+
+    line-height:1.8;
+}

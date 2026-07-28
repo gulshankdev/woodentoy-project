@@ -1,0 +1,102 @@
+.about-cta{
+
+    width:100%;
+
+    height:420px;
+
+    background-image:url("/images/about/cta-banner.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    position:relative;
+
+    margin-top:80px;
+}
+
+.cta-overlay{
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.55);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+.cta-subtitle{
+
+    color:#d6b16b;
+
+    letter-spacing:4px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+}
+
+.cta-overlay h2{
+
+    color:white;
+
+    font-size:52px;
+
+    line-height:1.2;
+
+    margin-bottom:22px;
+}
+
+.cta-text{
+
+    color:#f5f5f5;
+
+    max-width:700px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+}
+
+.cta-btn{
+
+    padding:18px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#b58b4c;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.cta-btn:hover{
+
+    background:#926d37;
+
+    transform:translateY(-3px);
+}

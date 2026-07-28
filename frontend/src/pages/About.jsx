@@ -1,25 +1,22 @@
-// import "./About.css";
+import AboutHero from "../components/about/AboutHero";
+import Story from "../components/about/Story";
+import MissionVision from "../components/about/MissionVision";
+import WhyChoose from "../components/about/WhyChoose";
+import CraftProcess from "../components/about/CraftProcess";
+import Statistics from "../components/about/Statistics";
+import AboutCTA from "../components/about/AboutCTA";
 
 function About() {
   return (
-    <section className="about-page">
-
-      <div className="about-hero">
-
-        <div className="hero-content">
-
-          <h1>About TumbleWood</h1>
-
-          <p>
-            Handcrafted wooden toys designed to inspire
-            creativity, learning, and joyful childhood memories.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
+    <>
+      <AboutHero />
+      <Story />
+       <MissionVision />
+        <WhyChoose />
+         <CraftProcess />
+          <Statistics />
+          <AboutCTA />
+    </>
   );
 }
 
