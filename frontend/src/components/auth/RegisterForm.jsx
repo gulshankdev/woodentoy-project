@@ -1,120 +1,135 @@
-import {useState} from "react";
-import {useNavigate,Link} from "react-router-dom";
 import "./LoginForm.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-function RegisterForm(){
+function RegisterForm() {
+  const navigate = useNavigate();
 
-const navigate=useNavigate();
+  const [user, setUser] = useState({
+    first_name: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+  });
 
-const [user,setUser]=useState({
+  const handleChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-first_name:"",
-email:"",
-phone:"",
-password:"",
-confirmPassword:""
+  const register = async (e) => {
+    e.preventDefault();
 
-});
+    if (user.password !== user.confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
 
-const handleChange=(e)=>{
+    try {
+      const response = await fetch(
+        "http://127.0.0.1:8000/api/accounts/register/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            first_name: user.first_name,
+            email: user.email,
+            phone: user.phone,
+            password: user.password,
+          }),
+        }
+      );
 
-setUser({...user,[e.target.name]:e.target.value});
+      const data = await response.json();
 
+      if (response.ok) {
+        alert("Registration Successful");
+        navigate("/login");
+      } else {
+        alert(JSON.stringify(data));
+      }
+  } catch (error) {
+  console.error("Full Error:", error);
+  alert("Cannot connect to Django backend");
 }
+  };
 
-const register=async(e)=>{
+  return (
+    <div className="login-container">
+      <div className="login-left">
+        <img
+          src="/images/auth/login-banner.jpg"
+          alt="Wooden Toys"
+        />
+      </div>
 
-e.preventDefault();
+      <div className="login-right">
+        <h1>Create Account</h1>
 
-if(user.password!==user.confirmPassword){
+        <p>Join TumbleWood and start shopping.</p>
 
-alert("Passwords do not match");
+        <form onSubmit={register}>
+          <input
+            type="text"
+            name="first_name"
+            placeholder="Full Name"
+            value={user.first_name}
+            onChange={handleChange}
+            required
+          />
 
-return;
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            value={user.email}
+            onChange={handleChange}
+            required
+          />
 
-}
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone Number"
+            value={user.phone}
+            onChange={handleChange}
+          />
 
-const res=await fetch("http://127.0.0.1:8000/api/accounts/register/",{
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={user.password}
+            onChange={handleChange}
+            required
+          />
 
-method:"POST",
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            value={user.confirmPassword}
+            onChange={handleChange}
+            required
+          />
 
-headers:{
-"Content-Type":"application/json"
-},
+          <button type="submit">
+            Create Account
+          </button>
+        </form>
 
-body:JSON.stringify({
-
-first_name:user.first_name,
-email:user.email,
-phone:user.phone,
-password:user.password
-
-})
-
-});
-
-if(res.ok){
-
-alert("Registration Successful");
-
-navigate("/login");
-
-}else{
-
-const err=await res.json();
-
-alert(JSON.stringify(err));
-
-}
-
-}
-
-return(
-
-<form onSubmit={register}>
-
-<input
-name="first_name"
-placeholder="Name"
-onChange={handleChange}
-/>
-
-<input
-name="email"
-placeholder="Email"
-onChange={handleChange}
-/>
-
-<input
-name="phone"
-placeholder="Phone"
-onChange={handleChange}
-/>
-
-<input
-name="password"
-type="password"
-placeholder="Password"
-onChange={handleChange}
-/>
-
-<input
-name="confirmPassword"
-type="password"
-placeholder="Confirm Password"
-onChange={handleChange}
-/>
-
-<button type="submit">
-
-Create Account
-
-</button>
-
-</form>
-
-)
-
+        <p className="register-link">
+          Already have an account?
+          <Link to="/login"> Login </Link>
+        </p>
+      </div>
+    </div>
+  );
 }
 
 export default RegisterForm;
