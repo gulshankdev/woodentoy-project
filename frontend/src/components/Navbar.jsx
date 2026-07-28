@@ -15,7 +15,7 @@ function Navbar() {
 
         <div className="logo">
           <img
-            src="/logo.png"
+            src="/tumblewood_logo.png"
             alt="TumbleWood"
           />
         </div>
