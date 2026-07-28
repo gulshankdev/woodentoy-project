@@ -1,38 +1,62 @@
 const collections = [
   {
     id: 1,
-    title: "Montessori Toys",
-    slug: "montessori",
-    image: "/images/categories/montessori.jpg",
+    title: "Learning Toys",
+    slug: "learning-toys",
+    category: "Learning Toys",
+    image: "/images/categories/learning.jpg",
     description:
-      "Beautiful handcrafted Montessori toys designed to encourage independent learning and creativity.",
+      "Educational wooden toys that inspire creativity, imagination, and early learning through play.",
   },
 
   {
     id: 2,
-    title: "Ride-On Toys",
-    slug: "ride-on",
-    image: "/images/categories/rideon.jpg",
+    title: "Activity Toys",
+    slug: "activity-toys",
+    category: "Activity Toys",
+    image: "/images/categories/activity.jpg",
     description:
-      "Premium wooden ride-on toys that develop balance, coordination, and confidence.",
+      "Interactive wooden toys that improve fine motor skills, coordination, and problem-solving abilities.",
   },
 
   {
     id: 3,
-    title: "Balance Toys",
-    slug: "balance",
-    image: "/images/categories/balance.jpg",
+    title: "Montessori",
+    slug: "montessori",
+    category: "Montessori",
+    image: "/images/categories/montessori.jpg",
     description:
-      "Fun balance toys that improve motor skills while keeping children active.",
+      "Handcrafted Montessori-inspired toys that encourage independent learning and child development.",
   },
 
   {
     id: 4,
-    title: "Wooden Furniture",
-    slug: "furniture",
+    title: "Balance Toys",
+    slug: "balance-toys",
+    category: "Balance Toys",
+    image: "/images/categories/balance.jpg",
+    description:
+      "Premium balance toys designed to improve coordination, stability, and physical confidence.",
+  },
+
+  {
+    id: 5,
+    title: "Outdoor Activities",
+    slug: "outdoor-activities",
+    category: "Outdoor Activities",
+    image: "/images/categories/outdoor.jpg",
+    description:
+      "Outdoor wooden play equipment that encourages adventure, movement, and healthy active play.",
+  },
+
+  {
+    id: 6,
+    title: "Kids Furniture",
+    slug: "kids-furniture",
+    category: "Kids Furniture",
     image: "/images/categories/furniture.jpg",
     description:
-      "Elegant wooden furniture specially designed for growing children.",
+      "Beautiful handcrafted wooden furniture designed especially for growing children.",
   },
 ];
 

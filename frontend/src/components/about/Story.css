@@ -92,3 +92,40 @@
 
     background:#926d37;
 }
+
+@media(max-width:992px){
+
+.story-container{
+    grid-template-columns:1fr;
+    gap:40px;
+}
+
+.story-content{
+    text-align:center;
+}
+
+.story-content h2{
+    font-size:38px;
+}
+
+}
+
+@media(max-width:768px){
+
+.story{
+    padding:70px 20px;
+}
+
+.story-content h2{
+    font-size:30px;
+}
+
+.story-content p{
+    font-size:15px;
+}
+
+.story-btn{
+    width:100%;
+}
+
+}

@@ -25,14 +25,14 @@ function Collections() {
 
         <div className="collections-grid">
 
-          {collections.map((collection) => (
+         {collections.map((collection) => (
 
-            <CollectionCard
-              key={collection.id}
-              collection={collection}
-            />
+  <CollectionCard
+    key={collection.id}
+    collection={collection}
+  />
 
-          ))}
+))}
 
         </div>
 

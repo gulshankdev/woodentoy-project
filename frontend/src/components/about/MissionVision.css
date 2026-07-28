@@ -74,3 +74,23 @@
 
     font-size:17px;
 }
+@media(max-width:768px){
+
+.mission-container{
+    grid-template-columns:1fr;
+}
+
+.mission-card{
+    padding:35px 25px;
+    text-align:center;
+}
+
+.mission-card h2{
+    font-size:28px;
+}
+
+.mission-icon{
+    margin:auto auto 20px;
+}
+
+}

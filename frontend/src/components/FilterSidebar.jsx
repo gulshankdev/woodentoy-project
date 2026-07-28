@@ -7,21 +7,29 @@ function FilterSidebar({
   setSelectedAge,
    maxPrice,
   setMaxPrice,
+   setSearch,
 }) {
-  const categories = [
-    "All",
-    "Montessori",
-    "Ride On Toys",
-    "Balance Toys",
-    "Furniture",
-  ];
-
-  const ages = [
+ const categories = [
   "All",
-  "12-36 Months",
-  "18-48 Months",
-  "18-60 Months",
-  "24-60 Months",
+  "Learning Toys",
+  "Activity Toys",
+  "Montessori",
+  "Balance Toys",
+  "Outdoor Activities",
+  "Kids Furniture",
+];
+
+const ageOptions = [
+  "All",
+  "0-3 Months",
+  "3-6 Months",
+  "6-9 Months",
+  "9-12 Months",
+  "12-15 Months",
+  "15-18 Months",
+  "18-21 Months",
+  "21-24 Months",
+  "24-30 Months+",
 ];
   return (
 
@@ -62,7 +70,7 @@ function FilterSidebar({
 
   <h3>Age</h3>
 
-  {ages.map((age) => (
+{ageOptions.map((age) => (
 
     <label key={age}>
 
@@ -105,6 +113,20 @@ function FilterSidebar({
   </p>
 
 </div>
+<button
+  className="clear-filter-btn"
+  onClick={() => {
+    setSelectedCategory("All");
+    setSelectedAge("All");
+    setMaxPrice(30000);
+
+    if (setSearch) {
+      setSearch("");
+    }
+  }}
+>
+  Clear Filters
+</button>
     </aside>
 
   );

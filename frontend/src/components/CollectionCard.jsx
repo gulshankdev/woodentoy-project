@@ -16,12 +16,12 @@ function CollectionCard({ collection }) {
 
         <p>{collection.description}</p>
 
-        <Link
-          to={`/collections/${collection.slug}`}
-          className="collection-btn"
-        >
-          Explore Collection →
-        </Link>
+    <Link
+  to={`/shop?category=${collection.category}`}
+  className="collection-btn"
+>
+  Explore Collection →
+</Link>
 
       </div>
 

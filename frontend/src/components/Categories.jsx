@@ -1,9 +1,13 @@
  import "./Categories.css";
 import categories from "../data/categories";
+import { Link } from "react-router-dom";
 
 function Categories() {
   return (
-    <section className="categories">
+   <section
+  id="categories"
+  className="categories"
+>
 
       <div className="section-title">
         <h2>Shop By Categories</h2>
@@ -12,17 +16,28 @@ function Categories() {
 
       <div className="category-grid">
 
-        {categories.map((item) => (
+       {categories.map((item) => (
 
-          <div className="category-card" key={item.id}>
+  <Link
+    key={item.id}
+    to={`/shop?category=${encodeURIComponent(item.title)}`}
+    className="category-link"
+  >
 
-            <img src={item.image} alt={item.title} />
+    <div className="category-card">
 
-            <h3>{item.title}</h3>
+      <img
+        src={item.image}
+        alt={item.title}
+      />
 
-          </div>
+      <h3>{item.title}</h3>
 
-        ))}
+    </div>
+
+  </Link>
+
+))}
 
       </div>
 

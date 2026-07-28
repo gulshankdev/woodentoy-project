@@ -53,3 +53,19 @@
 
     border:none;
 }
+
+@media(max-width:768px){
+
+.contact-map{
+    padding:70px 20px;
+}
+
+.map-heading h2{
+    font-size:32px;
+}
+
+.map-container iframe{
+    height:300px;
+}
+
+}

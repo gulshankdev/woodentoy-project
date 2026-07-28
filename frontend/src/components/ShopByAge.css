@@ -5,6 +5,12 @@
 
 }
 
+.age-card{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
 .ageHeading{
 
     text-align:center;

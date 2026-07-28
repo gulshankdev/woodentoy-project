@@ -133,3 +133,49 @@
 
     background:#936d38;
 }
+
+@media(max-width:992px){
+
+.contact-container{
+    grid-template-columns:1fr;
+}
+
+.contact-form{
+    order:1;
+}
+
+.contact-info{
+    order:2;
+}
+
+}
+
+@media(max-width:768px){
+
+.contact-section{
+    padding:70px 20px;
+}
+
+.contact-form{
+    padding:25px;
+}
+
+.contact-info h2,
+.contact-form h2{
+    font-size:30px;
+}
+
+.info-item{
+    flex-direction:column;
+    text-align:center;
+}
+
+.info-item svg{
+    margin:auto;
+}
+
+.contact-form button{
+    width:100%;
+}
+
+}

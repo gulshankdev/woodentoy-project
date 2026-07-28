@@ -109,3 +109,31 @@
 
     font-size:16px;
 }
+
+@media(max-width:992px){
+
+.why-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.why{
+    padding:70px 20px;
+}
+
+.why-heading h2{
+    font-size:34px;
+}
+
+.why-grid{
+    grid-template-columns:1fr;
+}
+
+.why-card{
+    padding:35px 25px;
+}
+
+}

@@ -1,5 +1,6 @@
 import "./Hero.css";
 import heroImg from "../assets/hero.jpg";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -23,9 +24,24 @@ function Hero() {
             creativity, imagination and child development.
           </p>
 
-          <div className="buttons">
-            <button className="primary">Shop Collection</button>
-            <button className="secondary">Explore More</button>
+         <div className="hero-buttons">
+            <Link to="/shop">
+  <button className="primary-btn">
+    Shop Collection
+  </button>
+</Link>
+ <button
+  className="secondary-btn"
+  onClick={() => {
+    document
+      .getElementById("categories")
+      ?.scrollIntoView({
+        behavior: "smooth",
+      });
+  }}
+>
+  Explore More
+</button>
           </div>
 
         </div>

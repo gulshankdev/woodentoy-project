@@ -1,4 +1,5 @@
 import "./ShopByAge.css";
+import { Link } from "react-router-dom";
 import ageData from "../data/ageData";
 
 function ShopByAge() {
@@ -17,18 +18,24 @@ function ShopByAge() {
 
       <div className="ageGrid">
 
-        {ageData.map((item) => (
+       {ageData.map((item) => (
 
-          <div className="ageCard" key={item.id}>
+  <Link
+    key={item.id}
+    to={`/shop?age=${encodeURIComponent(item.title)}`}
+    className="ageCard"
+  >
 
-            <img src={item.image} alt={item.title} />
+    <img
+      src={item.image}
+      alt={item.title}
+    />
 
-            <h3>{item.title}</h3>
+    <h3>{item.title}</h3>
 
-          </div>
+  </Link>
 
-        ))}
-
+))}
       </div>
 
     </section>

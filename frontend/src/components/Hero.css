@@ -66,14 +66,19 @@
     color:#f3f3f3;
 }
 
-.buttons{
+.hero-buttons{
 
     display:flex;
 
     gap:20px;
 }
 
-.primary{
+.hero-buttons a{
+
+    text-decoration:none;
+
+}
+.primary-btn{
 
     background:#b8873b;
 
@@ -90,7 +95,7 @@
     cursor:pointer;
 }
 
-.secondary{
+.secondary-btn{
 
     background:white;
 

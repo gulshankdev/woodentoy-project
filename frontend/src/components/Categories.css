@@ -50,6 +50,15 @@
   color: #333;
 }
 
+.category-link{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    display:block;
+
+}
 @media(max-width:1200px){
 
 .category-grid{

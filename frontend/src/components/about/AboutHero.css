@@ -61,3 +61,42 @@
 
     font-size:18px;
 }
+@media (max-width:768px){
+
+.about-hero{
+    height:350px;
+}
+
+.about-overlay{
+    padding:0 25px;
+    text-align:center;
+    align-items:center;
+}
+
+.about-overlay h1{
+    font-size:36px;
+    max-width:100%;
+}
+
+.about-subtitle{
+    font-size:13px;
+    letter-spacing:2px;
+}
+
+.about-breadcrumb{
+    font-size:16px;
+}
+
+}
+
+@media (max-width:480px){
+
+.about-hero{
+    height:300px;
+}
+
+.about-overlay h1{
+    font-size:30px;
+}
+
+}
